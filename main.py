@@ -8,11 +8,13 @@ import io
 
 app = FastAPI()
 
-origins = []
+origins = [
+    'https://thai-currency-detection.vercel.app'
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins='*', 
+    allow_origins=origins, 
     allow_credentials=True,
     allow_methods=['*'],
     allow_headers=['*']
